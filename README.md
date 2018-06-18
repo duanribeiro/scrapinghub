@@ -24,6 +24,7 @@ Fields:
 * height: (float) Physical height in cm, only if available in cm
 * width: (float) Physical width in cm, only if available in cm
 * description: (string) Description of the work
+* price: (float) Price of the work
 * path: (string list) The names of categories visited to reach the item via the browse tree
 
 ### Deliverable ###
