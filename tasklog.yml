@@ -1,0 +1,44 @@
+# The hours log is a list of records, with 'task', 'type', and 'hours', and comments fields
+#
+#   'task' should be a short, one line description
+#   'type' can be any of 'RESEARCH', 'DESIGN', 'CODE', 'TEST', 'DEPLOY'
+#   'hours' is the time spent, with decimals if needed
+#   'comments' is optional, and may be used to expand on the activity
+#
+# Below is an sample log. Please log the entries and types that match your actual workflow.
+# You can change the format if you like as long as the result is valid YAML and the required fields
+# are present.
+#
+
+log: 
+  - task : study scrapy/shub
+    type: RESEARCH
+    hours: 2.0
+
+  - task: design solution
+    type: DESIGN
+    comment: devise a crawling strategy
+    hours: 0.5
+
+  - task: implement 
+    type: CODE
+    hours: 2.5
+
+  - task: initial tests
+    type: TEST
+    hours: 0.5
+
+  - task: initial deploy
+    type: DEPLOY
+    hours: 0.5
+
+  - task: fixes
+    type: CODE
+    hours: 1
+    comments: >
+      had not considered all cases,
+      errors parsing field 'somefield'
+
+  - task: final deploy
+    type: DEPLOY
+    hours: 0.5
