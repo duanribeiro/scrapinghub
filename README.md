@@ -10,7 +10,7 @@ The goal of this trial project is to create a spider with Scrapy to scrape artis
 
 ### Product spider ###
 
-Create a Python 3.5+ spider to scrape all works in the In Sunsh and Summertime categories on [the Scrapinghub Maybe Modern Art Collection website](http://pstrial-a-2018-10-19.toscrape.com/).
+Create a Python 3.5+ spider to scrape all works in the "In Sunsh" and "Summertime" categories on [the Scrapinghub Maybe Modern Art Collection website](http://pstrial-a-2018-10-19.toscrape.com/).
 It should navigate down the work browse tree (e.g.: Summertime / Wrapper From / Barn Owl) to the lowest level and parse on a per-work basis.
 
 If a work does not have information for a specific field, please omit the field.
@@ -24,7 +24,7 @@ Fields:
 * height: (float) Physical height in cm, only if available in cm
 * width: (float) Physical width in cm, only if available in cm
 * description: (string) Description of the work
-* path: (string list) The names of categories visited to reach the item via the browse tree. Ex: ["Summertime", "Wrapper From", "Ao Shu"]
+* path: (list of strings) Names of the categories visited to reach the item via the browse tree. Ex: ["Summertime", "Wrapper From", "Ao Shu"]
 
 ### Getting started
 
