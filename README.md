@@ -28,7 +28,7 @@ Fields:
 
 ### Getting started
 
-Scrapy is an application framework for crawling web sites and extracting structured data. 
+Scrapy is an application framework for crawling web sites and extracting structured data.
 It is the primary library used for data extraction at ScrapingHub, which is the main reason why this trial is focused on Scrapy.
 
 For this assignment you'll need to modify the `artworks/spiders/trial.py`, `assumptions.txt`,
@@ -43,7 +43,7 @@ However, we also have a comprehensive [tutorial](https://doc.scrapy.org/en/lates
 1. Scrapy allows to [run](https://doc.scrapy.org/en/latest/intro/tutorial.html#how-to-run-our-spider) any spider locally.
    > scrapy crawl trial
 
-2. More than that you can also [debug](https://doc.scrapy.org/en/latest/topics/commands.html#shell) with Scrapy. 
+2. More than that you can also [debug](https://doc.scrapy.org/en/latest/topics/commands.html#shell) with Scrapy.
    It can be really useful if you are getting responses different to the ones you see in the browser or would like to check selectors quickly:
    > $ scrapy shell <url_to_explore>
    >
@@ -63,7 +63,7 @@ Important steps to make deployments the right way:
     You'll need to provide your Scrapinghub API key on this step. It can be found at https://app.scrapinghub.com/account/apikey
 
 2. [Set the project id](https://shub.readthedocs.io/en/stable/configuration.html#where-to-configure-shub) so _shub_ would know the target for deployment.
-    
+
     `scrapinghub.yml` file needs to be updated with the correct project id. You can take it from the end of the URL you received with the invitation to the trial:
     `https://app.scrapinghub.com/p/<project_id>/`
 
@@ -87,6 +87,8 @@ Important steps to make deployments the right way:
 
     You will receive an email with an invitation to a Scrapy Cloud project for this purpose (if you don't, please let us know).  Instructions for deploying with Python 3 can be found here: https://helpdesk.scrapinghub.com/support/solutions/articles/22000200387-deploying-python-3-spiders-to-scrapy-cloud
 
+    **If your job is taking more than 15 minutes to finish, something is wrong.**
+
 * Spent time report
 
     Please include a file "hours.txt" with a list of tasks you worked on and the durations you worked on them. You can be as detailed as you want, but a summary of high-level points is often enough (learning scrapy, spider design, implementation, testing, etc). Keep in mind that this is not a time competition, a clean implementation is preferable over a quick one.
@@ -96,7 +98,7 @@ Important steps to make deployments the right way:
     Please document assumptions you made and reasons for decisions you made in a file called "assumptions.txt" in your repository.  We will refer to this if your code contains things we did not expect.
 
 * Feedback
-    
+
     We would appreciate any feedback as per this trial. Please put it into "feedback.txt". Some specific questions are provided, but if you only have one thing to say, we're eager to receive any feedback at all. Please share!
 
 ### Time limit ###
