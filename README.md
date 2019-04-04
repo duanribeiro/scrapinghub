@@ -17,7 +17,7 @@ If a work does not have information for a specific field, please omit the field.
 
 Fields:
 
-* url: (string) Url of the work being scraped
+* url: (string) URL of the work being scraped
 * artist: (list of strings) List of artists for the work
 * title: (string) Title of the work
 * image: (string) URL of the image
@@ -80,7 +80,7 @@ Important steps to make deployments the right way:
 
     Please keep the followings points in mind when delivering your code:
 
-    1. Commit History. Donâ€™t worry about delivering a clean commit history, do as many commits as you would do while working normally. Please do not squash everything into a single commit, we use the commit history to review the evolution of your work.
+    1. Commit History. Don’t worry about delivering a clean commit history, do as many commits as you would do while working normally. Please do not squash everything into a single commit, we use the commit history to review the evolution of your work.
     2. Code quality. The final version of your code will be considered finished and production-ready - please make sure the spider results are complete and look correct upon inspection. You can check the [online documentation](https://doc.scrapy.org) to learn about Scrapy's features and best practices.
 
 * A complete run of your finished spider in Scrapy Cloud
@@ -105,8 +105,8 @@ We expect this project to take around 8-10 hours depending on your level of expe
 
 ### Deadlines ###
 
-This project doesnâ€™t have a deadline. Just submit the results as soon as you have them ready (but no sooner) including the spent time report. The sooner you submit, the sooner we will move to the next step.
+This project doesn’t have a deadline. Just submit the results as soon as you have them ready (but no sooner) including the spent time report. The sooner you submit, the sooner we will move to the next step.
 
 ### Confidentiality ###
 
-Please donâ€™t share code or specifications about this project with anyone outside Scrapinghub.
+Please don’t share code or specifications about this project with anyone outside Scrapinghub.
