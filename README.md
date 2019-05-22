@@ -24,7 +24,7 @@ Fields:
 * height: (float) Physical height in cm, only if available in cm
 * width: (float) Physical width in cm, only if available in cm
 * description: (string) Description of the work
-* path: (list of strings) Names of the categories visited to reach the item via the browse tree. Ex: ["Summertime", "Wrapper From", "Ao Shu"]
+* categories: (list of strings) Names of the categories visited to reach the item via the browse tree. Ex: ["Summertime", "Wrapper From", "Ao Shu"]
 
 ### Getting started
 
