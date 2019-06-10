@@ -4,13 +4,13 @@
 
 ### Goal ###
 
-The goal of this trial project is to create a spider with Scrapy to scrape artistic work information from a museum (pstrial-2017-12-18.toscrape.com). The specs are detailed below.
+The goal of this trial project is to create a spider with Scrapy to scrape artistic work information from a museum website. The specs are detailed below.
 
-**Note:** This spider and the website it scrapes are only for the test and have no commercial value.
+**Note:** The museum website was created for this trial and both it and the spider have no commercial value.
 
 ### Product spider ###
 
-Create a Python 3.5+ spider to scrape all works in the In Sunsh and Summertime categories on http://pstrial-2018-05-21.toscrape.com/ .
+Create a Python 3.5+ spider to scrape all works in the "In Sunsh" and "Summertime" categories on [the Scrapinghub Maybe Modern Art Collection website](http://pstrial-a-2018-10-19.toscrape.com/).
 It should navigate down the work browse tree (e.g.: Summertime / Wrapper From / Barn Owl) to the lowest level and parse on a per-work basis.
 
 If a work does not have information for a specific field, please omit the field.
@@ -25,21 +25,80 @@ Fields:
 * width: (float) Physical width in cm, only if available in cm
 * description: (string) Description of the work
 * price: (float) Price of the work
-* path: (string list) The names of categories visited to reach the item via the browse tree
+* categories: (list of strings) Names of the categories visited to reach the item via the browse tree. Ex: ["Summertime", "Wrapper From", "Ao Shu"]
+
+### Getting started
+
+Scrapy is an application framework for crawling web sites and extracting structured data. 
+It is the primary library used for data extraction at ScrapingHub, which is the main reason why this trial is focused on Scrapy.
+
+For this assignment you'll need to modify the `artworks/spiders/trial.py`, `assumptions.txt`,
+`feedback.txt` and `hours.txt` files.
+
+Using a [basic spider](https://doc.scrapy.org/en/latest/intro/tutorial.html#our-first-spider) should be enough to complete the task.
+However, we also have a comprehensive [tutorial](https://doc.scrapy.org/en/latest/intro/tutorial.html) which provides deeper insight into Scrapy.
+
+
+#### Running locally
+
+1. Scrapy allows to [run](https://doc.scrapy.org/en/latest/intro/tutorial.html#how-to-run-our-spider) any spider locally.
+   > scrapy crawl trial
+
+2. More than that you can also [debug](https://doc.scrapy.org/en/latest/topics/commands.html#shell) with Scrapy. 
+   It can be really useful if you are getting responses different to the ones you see in the browser or would like to check selectors quickly:
+   > $ scrapy shell <url_to_explore>
+   >
+   > \>>> # experiment with response
+
+
+#### Running at Scrapy Cloud (AKA "SC")
+
+This trial requires a crawling job at Scrapy Cloud as deliverable.
+
+ScrapingHub has its own [command line tool](https://shub.readthedocs.io/en/stable/quickstart.html) to make Scrapy Cloud deployments, called `shub`.
+
+Important steps to make deployments the right way:
+
+1. [Login to Scrapy Cloud](https://shub.readthedocs.io/en/stable/quickstart.html#basic-usage) by executing `shub login`
+
+    You'll need to provide your Scrapinghub API key on this step. It can be found at https://app.scrapinghub.com/account/apikey
+
+2. [Set the project id](https://shub.readthedocs.io/en/stable/configuration.html#where-to-configure-shub) so _shub_ would know the target for deployment.
+    
+    `scrapinghub.yml` file needs to be updated with the correct project id. You can take it from the end of the URL you received with the invitation to the trial:
+    `https://app.scrapinghub.com/p/<project_id>/`
+
+3. Run `shub deploy` to load code into Scrapy Cloud.
+4. Run `shub schedule trial` to start a spider job on SC. It is also possible to run the spider in the UI by hitting `Run` button.
+5. Check your project page at `https://app.scrapinghub.com/p/<project_id>/` to see the collected data.
+
 
 ### Deliverable ###
 
-You have been given access to this private repository on bitbucket to deliver the code of this trial.
+* The spider, committed and pushed to this repository
 
-The spider should be written in Python 3.5+ and follow the PEP8 style guidelines.  Please commit shub's scrapinghub.yml file (with any sensitive information removed).  You should also run your completed spider in the cloud - you will receive an email with an invitation to a Scrapy Cloud project for this purpose (if you don't, please let us know).  Instructions for deploying with Python 3 can be found here: https://helpdesk.scrapinghub.com/support/solutions/articles/22000200387-deploying-python-3-spiders-to-scrapy-cloud
+    The spider should be written in Python 3.5+ and follow the PEP8 style guidelines.  Please also commit shub's scrapinghub.yml file (with any sensitive information removed).
 
+    Please keep the followings points in mind when delivering your code:
 
-Please keep the followings points in mind when delivering your code:
+    1. Commit History. Don’t worry about delivering a clean commit history, do as many commits as you would do while working normally. Please do not squash everything into a single commit, we use the commit history to review the evolution of your work.
+    2. Code quality. The final version of your code will be considered finished and production-ready - please make sure the spider results are complete and look correct upon inspection. You can check the [online documentation](https://doc.scrapy.org) to learn about Scrapy's features and best practices.
 
-1. Commit History. Don’t worry about delivering a clean commit history, do as many commits as you would do while working normally. Please do not squash everything into a single commit, we use the commit history to review the evolution of your work.
-2. Code quality. The final version of your code will be considered finished and production-ready - please make sure the spider results are complete and look correct upon inspection.
-3. Spent time report. Please include a file "hours.txt" with a list of tasks you worked on and the durations you worked on them. You can be as detailed as you want, but a summary of high-level points is often enough (learning scrapy, spider design, implementation, testing, etc).
-4. Assumptions and decisions report.  Please document assumptions you made and reasons for decisions you made in a file called "assumptions.txt" in your repository.  We will refer to this if your code contains things we did not expect.
+* A complete run of your finished spider in Scrapy Cloud
+
+    You will receive an email with an invitation to a Scrapy Cloud project for this purpose (if you don't, please let us know).  Instructions for deploying with Python 3 can be found here: https://helpdesk.scrapinghub.com/support/solutions/articles/22000200387-deploying-python-3-spiders-to-scrapy-cloud
+
+* Spent time report
+
+    Please include a file "hours.txt" with a list of tasks you worked on and the durations you worked on them. You can be as detailed as you want, but a summary of high-level points is often enough (learning scrapy, spider design, implementation, testing, etc). Keep in mind that this is not a time competition, a clean implementation is preferable over a quick one.
+
+* Assumptions and decisions report
+
+    Please document assumptions you made and reasons for decisions you made in a file called "assumptions.txt" in your repository.  We will refer to this if your code contains things we did not expect.
+
+* Feedback
+    
+    We would appreciate any feedback as per this trial. Please put it into "feedback.txt". Some specific questions are provided, but if you only have one thing to say, we're eager to receive any feedback at all. Please share!
 
 ### Time limit ###
 
