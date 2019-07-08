@@ -31,8 +31,7 @@ Fields:
 Scrapy is an application framework for crawling web sites and extracting structured data. 
 It is the primary library used for data extraction at ScrapingHub, which is the main reason why this trial is focused on Scrapy.
 
-For this assignment you'll need to modify the `artworks/spiders/trial.py`, `assumptions.txt`,
-`feedback.txt` and `hours.txt` files.
+For this assignment we are providing you with an already set up Scrapy project, with a basic spider skeleton available at `artworks/spiders/trial.py`.
 
 Using a [basic spider](https://doc.scrapy.org/en/latest/intro/tutorial.html#our-first-spider) should be enough to complete the task.
 However, we also have a comprehensive [tutorial](https://doc.scrapy.org/en/latest/intro/tutorial.html) which provides deeper insight into Scrapy.
