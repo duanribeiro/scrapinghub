@@ -9,5 +9,12 @@ import scrapy
 
 
 class ArtworksItem(scrapy.Item):
-    # define the fields for your item here
-    pass
+    url = scrapy.Field()
+    artist = scrapy.Field()
+    title = scrapy.Field()
+    image = scrapy.Field()
+    height = scrapy.Field()
+    width = scrapy.Field()
+    description = scrapy.Field()
+    categories = scrapy.Field()
+
