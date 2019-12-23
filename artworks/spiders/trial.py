@@ -5,8 +5,21 @@ import scrapy
 
 class TrialSpider(scrapy.Spider):
     name = 'trial'
-    start_urls = []  # put your start urls here
+    start_urls = [
+        'http://pstrial-a-2018-10-19.toscrape.com/browse/'
+    ]  # put your start urls here
 
     def parse(self, response):
         # Put your logic to process artworks directory
+
+        final_object = {
+            "url": "",
+            "artist": [""],
+            "title": "",
+            "image": "",
+            "height": 0,
+            "width":  0,
+            "description": "",
+            "categories": [""],
+        }
         pass
