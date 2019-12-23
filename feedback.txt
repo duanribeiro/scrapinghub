@@ -8,13 +8,20 @@ We'd love some feedback from you on your experience of the trial project.
 ## Time and Trial Length
 
 > How did you feel about the length of the trial?
+I found it a fair test, it can cover many subjects that a good developer should have.
+
 > Was it too much, or too quick for the effort involved?
+Its OK.
 
 
 ## Complexity or Difficulty
 
 > Did you find the difficulty appropriate?
+Yes
+
 > Was the trial too easy, too difficult, or just right for the position
+Just right for the position
+
 > you feel you are applying for?
 > (Your answer here is _not_ used to judge you as a candidate, only
 >  to improve our trial process)
@@ -22,10 +29,10 @@ We'd love some feedback from you on your experience of the trial project.
 
 ## Any Other Thoughts?
 
-> There are so many questions we'd love to ask, but we don't want to
-> ask for any more of your time. But if you have any other ideas, thoughts,
-> or experiences you'd like to share here to help us improve, that would
-> be very welcome.
+I wanted first to thank you for taking this test.
+It was really cool to solve a challenge from a company that I've had the pleasure of using the products a lot.
+
+If I could make a suggestion of improvement, I had to disable ROBOTSTXT_OBEY, maybe it wouldn't be necessary
 
 
 ## Thanks!

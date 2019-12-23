@@ -2,5 +2,8 @@
 
 My first decision happens to decide which "start_urls" I will use.
 
-normally I would only use the endpoints: "/insunsh" and "/summertime", but as it seems to me that navigation
+Normally I would only use the endpoints: "/insunsh" and "/summertime", but as it seems to me that navigation
 is part of the exercise I will use the endpoint: "/browse"
+
+I may not have understood the correct form if I do the "Categorie" field, so I only enter the last value
+of the category.

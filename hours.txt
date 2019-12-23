@@ -1,1 +1,11 @@
 # Place for time log for the project
+
+11:30 - Reading the exercise
+11:45 - First commit, with the very basic scrapy schema
+12:00 - I started looking at the site for patterns to find the best approach
+13:20 - Started to codding some Requests, saw that I would need 2 more levels of parsers, pipeline, settings changes.
+
+14:00 - LUNCH TIME !
+
+14:15 - Added some minor features, logs and deploy
+15:05 - Started writing hours.txt, assumptions.txt and feedback.txt
