@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 import scrapy
 from artworks.items import ArtworksItem
-from scrapy.utils.response import open_in_browser
 
+# Very useful lib
+# from scrapy.utils.response import open_in_browser
 
 
 class TrialSpider(scrapy.Spider):
     name = 'trial'
+    allowed_domains = ['http://pstrial-a-2018-10-19.toscrape.com']
 
     def start_requests(self):
         url = "http://pstrial-a-2018-10-19.toscrape.com/browse/"
@@ -26,7 +28,7 @@ class TrialSpider(scrapy.Spider):
                                           callback=self.parse_categorie,
                                           meta={
                                               'page': 0,
-                                              'categorie': url_summertime_subitens.split('/')[-1]
+                                              'categorie': url_summertime_subitens.split('/')[-1].split('?')[0]
                                           })
 
         # Then, lets check the in sunsh <a> link
@@ -49,7 +51,10 @@ class TrialSpider(scrapy.Spider):
             yield scrapy.http.FormRequest(url=url_item,
                                           method='GET',
                                           callback=self.parse_item,
-                                          meta={'categorie':'in_sunsh'})
+                                          meta={
+                                              'page': response.meta["page"],
+                                              'categorie': response.meta["categorie"]
+                                          })
 
         if 'Next' in response.text:
             url_next_page = f'{response.url.split("=")[0]}={response.meta["page"] + 1}'
@@ -57,8 +62,10 @@ class TrialSpider(scrapy.Spider):
             yield scrapy.http.FormRequest(url=url_next_page,
                                           method='GET',
                                           callback=self.parse_categorie,
+                                          dont_filter=True,
                                           meta={
-                                              'page': response.meta["page"] + 1
+                                              'page': response.meta["page"] + 1,
+                                              'categorie': response.meta["categorie"]
                                           })
 
     def parse_item(self, response):
@@ -76,10 +83,13 @@ class TrialSpider(scrapy.Spider):
                 if len(size.split('x')) == 2:
                     height, width = size.split('x')
                 else:
-                    height, width, depth = size.split('x')
+                    try:
+                        height, width, depth = size.split('x')
+                    except:
+                        pass
 
-                return_object["height"] = height.strip()
-                return_object["width"] = width.strip()
+                return_object["height"] = float(height.strip())
+                return_object["width"] = float(width.strip())
 
         return_object["url"] = response.url
         return_object["artist"] = list_artist

@@ -19,7 +19,7 @@ DUPEFILTER_DEBUG = False
 #USER_AGENT = 'artworks (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
