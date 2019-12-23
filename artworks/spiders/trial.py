@@ -1,14 +1,16 @@
 # -*- coding: utf-8 -*-
 import scrapy
 from artworks.items import ArtworksItem
+import logging
 
 # Very useful lib
 # from scrapy.utils.response import open_in_browser
 
+logger = logging.getLogger('myScrapyLogger')
 
 class TrialSpider(scrapy.Spider):
     name = 'trial'
-    allowed_domains = ['http://pstrial-a-2018-10-19.toscrape.com']
+    # allowed_domains = ['ppstrial-a-2018-10-19.toscrape.com']
 
     def start_requests(self):
         url = "http://pstrial-a-2018-10-19.toscrape.com/browse/"
@@ -86,7 +88,7 @@ class TrialSpider(scrapy.Spider):
                     try:
                         height, width, depth = size.split('x')
                     except:
-                        pass
+                        logger.warning("Size not found!")
 
                 return_object["height"] = float(height.strip())
                 return_object["width"] = float(width.strip())
