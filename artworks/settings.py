@@ -13,7 +13,7 @@ BOT_NAME = 'artworks'
 
 SPIDER_MODULES = ['artworks.spiders']
 NEWSPIDER_MODULE = 'artworks.spiders'
-
+DUPEFILTER_DEBUG = False
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'artworks (+http://www.yourdomain.com)'
